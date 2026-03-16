@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 640" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 7" refX="9" refY="3.5" markerWidth="8" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,3.5 L0,7z" fill="#64748b"/>
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 7" refX="9" refY="3.5" markerWidth="8" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,3.5 L0,7z" fill="#10b981"/>
+    </marker>
+    <marker id="arrow-amber" viewBox="0 0 10 7" refX="9" refY="3.5" markerWidth="8" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,3.5 L0,7z" fill="#f59e0b"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1280" height="640" fill="#0f172a"/>
+
+  <!-- Title -->
+  <text x="640" y="80" text-anchor="middle" fill="#f8fafc" font-size="42" font-weight="700">agent-hive</text>
+  <text x="640" y="115" text-anchor="middle" fill="#94a3b8" font-size="18">Run Claude Code tasks on remote machines via GitHub Issues</text>
+
+  <!-- MacBook Pro box -->
+  <rect x="80" y="180" width="280" height="160" rx="10" fill="#1e293b" stroke="#334155" stroke-width="2"/>
+  <text x="198" y="220" text-anchor="middle" fill="#f8fafc" font-size="20" font-weight="600">MacBook Pro</text>
+  <rect x="258" y="204" width="50" height="22" rx="11" fill="#10b981"/>
+  <text x="283" y="220" text-anchor="middle" fill="#fff" font-size="11" font-weight="600">@mac</text>
+  <text x="220" y="250" text-anchor="middle" fill="#94a3b8" font-size="14">Claude Code</text>
+  <text x="220" y="280" text-anchor="middle" fill="#64748b" font-size="13">/hive submit @gpu ...</text>
+  <text x="220" y="305" text-anchor="middle" fill="#64748b" font-size="13">/hive status</text>
+
+  <!-- GitHub Issues box -->
+  <rect x="460" y="160" width="360" height="240" rx="10" fill="#1e293b" stroke="#334155" stroke-width="2"/>
+  <text x="640" y="200" text-anchor="middle" fill="#f8fafc" font-size="20" font-weight="600">GitHub Issues</text>
+
+  <!-- Issue card -->
+  <rect x="490" y="220" width="300" height="72" rx="6" fill="#0f172a" stroke="#334155"/>
+  <text x="510" y="246" fill="#e2e8f0" font-size="15">#42 Train alignment model</text>
+  <rect x="510" y="258" width="52" height="20" rx="10" fill="#f59e0b"/>
+  <text x="536" y="273" text-anchor="middle" fill="#fff" font-size="10" font-weight="600">pending</text>
+  <rect x="570" y="258" width="40" height="20" rx="10" fill="#374151"/>
+  <text x="590" y="273" text-anchor="middle" fill="#fff" font-size="10" font-weight="600">@gpu</text>
+  <rect x="618" y="258" width="34" height="20" rx="10" fill="#6366f1"/>
+  <text x="635" y="273" text-anchor="middle" fill="#fff" font-size="10" font-weight="600">hive</text>
+
+  <!-- State transitions -->
+  <rect x="490" y="306" width="300" height="72" rx="6" fill="#0f172a" stroke="#334155"/>
+  <text x="510" y="332" fill="#10b981" font-size="12">pending</text>
+  <text x="572" y="332" fill="#94a3b8" font-size="12">&#8594;</text>
+  <text x="590" y="332" fill="#8b5cf6" font-size="12">in-progress</text>
+  <text x="680" y="332" fill="#94a3b8" font-size="12">&#8594;</text>
+  <text x="702" y="332" fill="#10b981" font-size="12">complete</text>
+  <text x="590" y="358" fill="#8b5cf6" font-size="12">in-progress</text>
+  <text x="680" y="358" fill="#94a3b8" font-size="12">&#8594;</text>
+  <text x="702" y="358" fill="#ef4444" font-size="12">error</text>
+
+  <!-- Windows GPU box -->
+  <rect x="920" y="180" width="280" height="160" rx="10" fill="#1e293b" stroke="#334155" stroke-width="2"/>
+  <text x="1030" y="220" text-anchor="middle" fill="#f8fafc" font-size="20" font-weight="600">Windows GPU Box</text>
+  <rect x="1112" y="204" width="46" height="22" rx="11" fill="#8b5cf6"/>
+  <text x="1135" y="220" text-anchor="middle" fill="#fff" font-size="11" font-weight="600">@gpu</text>
+  <text x="1060" y="250" text-anchor="middle" fill="#94a3b8" font-size="14">Claude Code + RTX</text>
+  <text x="1060" y="280" text-anchor="middle" fill="#64748b" font-size="13">/hive watch</text>
+  <text x="1060" y="305" text-anchor="middle" fill="#64748b" font-size="13">polls every 15s</text>
+
+  <!-- Arrows -->
+  <line x1="360" y1="240" x2="458" y2="240" stroke="#f59e0b" stroke-width="2" marker-end="url(#arrow-amber)"/>
+  <text x="409" y="232" text-anchor="middle" fill="#f59e0b" font-size="12">create</text>
+
+  <line x1="822" y1="240" x2="918" y2="240" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="870" y="232" text-anchor="middle" fill="#94a3b8" font-size="12">claim</text>
+
+  <line x1="918" y1="300" x2="822" y2="340" stroke="#10b981" stroke-width="2" marker-end="url(#arrow-green)"/>
+  <text x="878" y="328" text-anchor="middle" fill="#10b981" font-size="12">output</text>
+
+  <!-- Bottom flow -->
+  <rect x="80" y="460" width="1120" height="120" rx="8" fill="#1e293b" stroke="#334155"/>
+  <text x="110" y="498" fill="#f59e0b" font-size="16" font-weight="600">1.</text>
+  <text x="135" y="498" fill="#e2e8f0" font-size="15">Submit task as GitHub Issue with labels: hive, pending, @gpu</text>
+  <text x="110" y="528" fill="#8b5cf6" font-size="16" font-weight="600">2.</text>
+  <text x="135" y="528" fill="#e2e8f0" font-size="15">Watcher claims: removes pending, adds in-progress, posts comment</text>
+  <text x="110" y="558" fill="#10b981" font-size="16" font-weight="600">3.</text>
+  <text x="135" y="558" fill="#e2e8f0" font-size="15">Executes via Claude CLI, posts output as comment, closes with complete</text>
+</svg>
