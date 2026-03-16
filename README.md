@@ -82,6 +82,26 @@ Tasks are GitHub Issues with these labels:
 - Without `--target`, any watcher can claim it.
 - Dependencies: `--after 42` blocks until issue #42 is closed with `complete`.
 
+## Restricting watcher permissions
+
+By default, watchers run with full Claude Code access. To restrict what tools
+a watcher can use:
+
+```
+/hive watch --allowedTools Bash,Read,Write,Grep
+```
+
+This passes `--allowedTools` to the `claude` CLI for every task the watcher
+executes. Useful for limiting a box to read-only operations or preventing
+file writes on a shared machine.
+
+## Security
+
+agent-hive is designed for small, trusted teams where you control all the
+machines. Anyone who can create issues on your repo can submit tasks that
+execute code on your watchers. Do not run watchers on repos with untrusted
+collaborators.
+
 ## As a Claude Code skill
 
 Copy `SKILL.md` to use `/hive` commands in Claude Code conversations.
