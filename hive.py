@@ -270,8 +270,12 @@ def cmd_watch(args, repo):
     if args.daemon:
         _daemonize()
 
+    allowed_tools = getattr(args, 'allowedTools', None)
+
     print(f"Watching for tasks as @{box} on {repo}...")
     print(f"Poll interval: {POLL_INTERVAL}s")
+    if allowed_tools:
+        print(f"Allowed tools: {allowed_tools}")
 
     # Create target label if needed
     gh_run(["label", "create", target_label, "--description",
@@ -279,7 +283,7 @@ def cmd_watch(args, repo):
 
     while True:
         try:
-            _poll_and_execute(repo, box, target_label)
+            _poll_and_execute(repo, box, target_label, allowed_tools)
         except KeyboardInterrupt:
             print("\nWatcher stopped.")
             break
@@ -288,7 +292,7 @@ def cmd_watch(args, repo):
         time.sleep(POLL_INTERVAL)
 
 
-def _poll_and_execute(repo, box, target_label):
+def _poll_and_execute(repo, box, target_label, allowed_tools=None):
     """Check for pending tasks and execute one."""
     # Find pending tasks for this box (targeted or untargeted)
     result = gh_run([
@@ -350,7 +354,7 @@ def _poll_and_execute(repo, box, target_label):
         # Execute
         cwd = meta.get("cwd", ".")
         cwd = os.path.expanduser(cwd)
-        success = _execute_task(num, title, cwd, repo)
+        success = _execute_task(num, title, cwd, repo, allowed_tools)
 
         if success:
             gh_run([
@@ -373,13 +377,16 @@ def _poll_and_execute(repo, box, target_label):
         return  # one task per poll cycle
 
 
-def _execute_task(num, title, cwd, repo):
+def _execute_task(num, title, cwd, repo, allowed_tools=None):
     """Execute a task via Claude Code CLI."""
     print(f"Executing in {cwd}: {title}")
 
     try:
+        cmd = ["claude", "-p", title, "--output-format", "text"]
+        if allowed_tools:
+            cmd.extend(["--allowedTools", allowed_tools])
         result = subprocess.run(
-            ["claude", "-p", title, "--output-format", "text"],
+            cmd,
             capture_output=True, text=True, cwd=cwd,
             timeout=3600,  # 1 hour max
         )
@@ -523,6 +530,7 @@ def main():
     # watch
     p_watch = sub.add_parser("watch")
     p_watch.add_argument("--daemon", action="store_true")
+    p_watch.add_argument("--allowedTools", help="Comma-separated list of tools the claude CLI can use")
 
     # reset
     p_reset = sub.add_parser("reset")
