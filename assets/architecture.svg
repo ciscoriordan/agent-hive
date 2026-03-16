@@ -67,7 +67,7 @@
 
   <!-- Arrows: GPU -> GitHub (output) -->
   <line x1="568" y1="120" x2="512" y2="145" stroke="#10b981" stroke-width="1.5" marker-end="url(#arrow-green)"/>
-  <text x="545" y="140" text-anchor="middle" fill="#10b981" font-size="9">output</text>
+  <text x="545" y="148" text-anchor="middle" fill="#10b981" font-size="9">output</text>
 
   <!-- Flow description -->
   <rect x="30" y="230" width="740" height="90" rx="6" fill="#1e293b" stroke="#334155"/>

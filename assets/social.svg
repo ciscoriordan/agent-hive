@@ -69,7 +69,7 @@
   <text x="870" y="232" text-anchor="middle" fill="#94a3b8" font-size="12">claim</text>
 
   <line x1="918" y1="300" x2="822" y2="340" stroke="#10b981" stroke-width="2" marker-end="url(#arrow-green)"/>
-  <text x="878" y="328" text-anchor="middle" fill="#10b981" font-size="12">output</text>
+  <text x="878" y="338" text-anchor="middle" fill="#10b981" font-size="12">output</text>
 
   <!-- Bottom flow -->
   <rect x="80" y="460" width="1120" height="120" rx="8" fill="#1e293b" stroke="#334155"/>
