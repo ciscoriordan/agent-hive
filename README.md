@@ -19,31 +19,28 @@ comments capture output. Submit from anywhere, execute anywhere.
 
 ## Setup
 
-```bash
-# On each machine, set the box name
-python hive.py box mac     # on your Mac
-python hive.py box gpu     # on the GPU box
+On each machine, run `/hive setup` in Claude Code. It will prompt for a box
+name and start watching for tasks.
 
-# Register with the hive (creates the @box label)
-python hive.py register
-
-# Start watching for tasks
-python hive.py watch --daemon
 ```
+/hive setup
+```
+
+That's it. On subsequent sessions, `/hive watch` resumes the watcher.
 
 ## Commands
 
 | Command | Description |
 |---------|-------------|
-| `python hive.py submit "Task description" --target gpu` | Submit a task |
-| `python hive.py submit "Rebuild" --after 42` | Task depends on #42 |
-| `python hive.py status` | Show open tasks |
-| `python hive.py status all` | Show all tasks |
-| `python hive.py watch` | Start watching (foreground) |
-| `python hive.py watch --daemon` | Start watching (background) |
-| `python hive.py reset 42` | Reset task #42 to pending |
-| `python hive.py box [name]` | Show or set box name |
-| `python hive.py register [name]` | Register box with the hive |
+| `/hive` | Show task queue and watcher status |
+| `/hive setup` | First-time setup: name this machine, start watching |
+| `/hive submit @gpu Train the model` | Submit a task to the GPU box |
+| `/hive submit Rebuild iOS (after:42)` | Task depends on #42 |
+| `/hive status` | Show open tasks |
+| `/hive watch` | Start watching for tasks |
+| `/hive stop` | Stop the watcher |
+| `/hive rename gpu` | Rename this machine |
+| `/hive reset 42` | Reset task #42 to pending |
 
 ## Labels
 
