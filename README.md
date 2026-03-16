@@ -19,6 +19,15 @@ Every machine (submitter and watcher) needs both:
 - **`gh` CLI** (authenticated): `gh auth login`
 - **Claude Code CLI**: `claude`
 
+## Box names
+
+Each machine gets a short name used for task routing. Pick something
+descriptive - `mac`, `gpu`, `desktop`, `server`, etc. The name becomes a
+GitHub label (`@mac`, `@gpu`) so tasks can target specific machines.
+
+Box names are stored in `~/.claude/settings.json` under `HIVE_BOX_NAME`
+and persist across sessions. You set the name once during setup.
+
 ## Setup
 
 On each machine, run `/hive setup` in Claude Code. It will prompt for a box
@@ -29,6 +38,16 @@ name and start watching for tasks.
 ```
 
 That's it. On subsequent sessions, `/hive watch` resumes the watcher.
+
+## Which repo?
+
+The hive uses whichever GitHub repo you're in when you run commands. Issues
+are created on that repo. If you want a single task queue across projects,
+pick one repo as the hub and always submit from there. If you want per-project
+queues, submit from each repo separately.
+
+The `--cwd` flag tells the watcher which directory to execute in, so tasks
+can target any local path regardless of which repo hosts the issue.
 
 ## Commands
 
