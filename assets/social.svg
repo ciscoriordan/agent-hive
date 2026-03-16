@@ -20,12 +20,12 @@
 
   <!-- MacBook Pro box -->
   <rect x="80" y="180" width="280" height="160" rx="10" fill="#1e293b" stroke="#334155" stroke-width="2"/>
-  <text x="198" y="220" text-anchor="middle" fill="#f8fafc" font-size="20" font-weight="600">MacBook Pro</text>
-  <rect x="258" y="204" width="50" height="22" rx="11" fill="#10b981"/>
-  <text x="283" y="220" text-anchor="middle" fill="#fff" font-size="11" font-weight="600">@mac</text>
+  <text x="190" y="220" text-anchor="middle" fill="#f8fafc" font-size="20" font-weight="600">MacBook Pro</text>
+  <rect x="262" y="204" width="50" height="22" rx="11" fill="#10b981"/>
+  <text x="287" y="220" text-anchor="middle" fill="#fff" font-size="11" font-weight="600">@mac</text>
   <text x="220" y="250" text-anchor="middle" fill="#94a3b8" font-size="14">Claude Code</text>
-  <text x="220" y="280" text-anchor="middle" fill="#64748b" font-size="13">/hive submit @gpu ...</text>
-  <text x="220" y="305" text-anchor="middle" fill="#64748b" font-size="13">/hive status</text>
+  <text x="220" y="280" text-anchor="middle" fill="#64748b" font-size="13">/hive submit @gpu Train</text>
+  <text x="220" y="305" text-anchor="middle" fill="#64748b" font-size="13">  alignment model...</text>
 
   <!-- GitHub Issues box -->
   <rect x="460" y="160" width="360" height="240" rx="10" fill="#1e293b" stroke="#334155" stroke-width="2"/>
@@ -36,7 +36,7 @@
   <text x="510" y="246" fill="#e2e8f0" font-size="15">#42 Train alignment model</text>
   <rect x="510" y="258" width="52" height="20" rx="10" fill="#f59e0b"/>
   <text x="536" y="273" text-anchor="middle" fill="#fff" font-size="10" font-weight="600">pending</text>
-  <rect x="570" y="258" width="40" height="20" rx="10" fill="#374151"/>
+  <rect x="570" y="258" width="40" height="20" rx="10" fill="#8b5cf6"/>
   <text x="590" y="273" text-anchor="middle" fill="#fff" font-size="10" font-weight="600">@gpu</text>
   <rect x="618" y="258" width="34" height="20" rx="10" fill="#6366f1"/>
   <text x="635" y="273" text-anchor="middle" fill="#fff" font-size="10" font-weight="600">hive</text>
@@ -54,9 +54,9 @@
 
   <!-- Windows GPU box -->
   <rect x="920" y="180" width="280" height="160" rx="10" fill="#1e293b" stroke="#334155" stroke-width="2"/>
-  <text x="1030" y="220" text-anchor="middle" fill="#f8fafc" font-size="20" font-weight="600">Windows GPU Box</text>
-  <rect x="1112" y="204" width="46" height="22" rx="11" fill="#8b5cf6"/>
-  <text x="1135" y="220" text-anchor="middle" fill="#fff" font-size="11" font-weight="600">@gpu</text>
+  <text x="1020" y="220" text-anchor="middle" fill="#f8fafc" font-size="20" font-weight="600">Windows GPU Box</text>
+  <rect x="1118" y="204" width="46" height="22" rx="11" fill="#8b5cf6"/>
+  <text x="1141" y="220" text-anchor="middle" fill="#fff" font-size="11" font-weight="600">@gpu</text>
   <text x="1060" y="250" text-anchor="middle" fill="#94a3b8" font-size="14">Claude Code + RTX</text>
   <text x="1060" y="280" text-anchor="middle" fill="#64748b" font-size="13">/hive watch</text>
   <text x="1060" y="305" text-anchor="middle" fill="#64748b" font-size="13">polls every 15s</text>
