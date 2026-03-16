@@ -14,8 +14,10 @@ comments capture output. Submit from anywhere, execute anywhere.
 
 ## Requirements
 
-- `gh` CLI (authenticated): `gh auth login`
-- Claude Code CLI: `claude`
+Every machine (submitter and watcher) needs both:
+
+- **`gh` CLI** (authenticated): `gh auth login`
+- **Claude Code CLI**: `claude`
 
 ## Setup
 
