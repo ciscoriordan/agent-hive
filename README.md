@@ -88,12 +88,26 @@ By default, watchers run with full Claude Code access. To restrict what tools
 a watcher can use:
 
 ```
-/hive watch --allowedTools Bash,Read,Write,Grep
+/hive watch --allowedTools Read,Grep
 ```
 
 This passes `--allowedTools` to the `claude` CLI for every task the watcher
 executes. Useful for limiting a box to read-only operations or preventing
 file writes on a shared machine.
+
+Available tools:
+
+| Tool | Description |
+|------|-------------|
+| `Bash` | Execute shell commands |
+| `Read` | Read files |
+| `Write` | Create/overwrite files |
+| `Edit` | Edit existing files |
+| `Glob` | Find files by pattern |
+| `Grep` | Search file contents |
+| `WebFetch` | Fetch web content |
+| `WebSearch` | Search the web |
+| `NotebookEdit` | Edit Jupyter notebooks |
 
 ## Security
 
